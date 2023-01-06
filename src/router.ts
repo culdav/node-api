@@ -64,4 +64,14 @@ router.post(
 );
 router.delete('/updatepoint/:id', (req, res) => {});
 
+router.use((err, req, res, next) => {
+  if (err.type === 'auth') {
+    res.status(401).josn({ message: 'Unauthorized' });
+  } else if (err.type === 'input') {
+    res.status(400).json({ message: 'Invalid input' });
+  } else {
+    res.status(500).json({ message: 'Internal error' });
+  }
+});
+
 export default router;
