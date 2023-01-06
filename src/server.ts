@@ -17,12 +17,12 @@ app.use((req, res, next) => {
   next();
 });
 
-// app.get('/', (req, res) => {
-//   // console.log('hello from express');
-//   // res.status(200);
-//   // res.json({ message: 'hello' });
-//   throw new Error('hello');
-// });
+app.get('/', (req, res) => {
+  console.log('hello from express');
+  res.status(200);
+  res.json({ message: 'hello' });
+  // throw new Error('hello');
+});
 
 // app.get('/', (req, res, next) => {
   // console.log('hello from express');
